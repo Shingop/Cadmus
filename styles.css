@@ -48,12 +48,15 @@ body::after {
  
 /* ── Tabbar ── */
 .tabbar {
-  position: relative;
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
   z-index: 10;
   display: flex;
   align-items: stretch;
+  background: transparent;
   border-bottom: 1px solid rgba(255, 255, 255, 0.08);
-  background-color: #0a0a0a;
   padding: 0 20px;
   height: 38px;
 }
@@ -87,7 +90,7 @@ body::after {
   color: #fff;
 }
  
-/* White indicator on TOP of active tab */
+/* White indicator on top of active tab */
 .tab.active::after {
   content: '';
   position: absolute;
@@ -103,6 +106,7 @@ main {
   position: relative;
   z-index: 1;
   padding: 60px 40px;
+  padding-top: 38px; /* don't hide behind fixed tabbar */
 }
  
 .page {
