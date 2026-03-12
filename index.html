@@ -7,7 +7,38 @@
   <link rel="stylesheet" href="styles.css" />
 </head>
 <body>
-  <h1>My First CSS Example</h1>
-<p>This is a paragraph.</p>
+  <nav class="tabbar">
+    <div class="tabs">
+      <button class="tab active" data-tab="terminal">TERMINAL</button>
+      <button class="tab" data-tab="overview">SITE OVERVIEW</button>
+      <button class="tab" data-tab="database">DATABASE</button>
+      <button class="tab" data-tab="laboratory">LABORATORY</button>
+    </div>
+    <span class="country">COUNTRY</span>
+  </nav>
+ 
+  <main>
+    <section class="page active" id="terminal">
+      <h1>Terminal</h1>
+      <p>Terminal section content goes here.</p>
+    </section>
+ 
+    <section class="page" id="overview">
+      <h1>Site Overview</h1>
+      <p>Site overview content goes here.</p>
+    </section>
+ 
+    <section class="page" id="database">
+      <h1>Database</h1>
+      <p>Database content goes here.</p>
+    </section>
+ 
+    <section class="page" id="laboratory">
+      <h1>Laboratory</h1>
+      <p>Laboratory content goes here.</p>
+    </section>
+  </main>
+ 
+  <script src="script.js"></script>
 </body>
 </html>
