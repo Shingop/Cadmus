@@ -57,7 +57,7 @@ body::after {
   display: flex;
   align-items: stretch;
   background: transparent;
-  border-bottom: 1px solid rgba(255,255,255,0.08);
+  border-bottom: 1px solid rgba(255,255,255,0.25);
   padding: 0 20px;
   height: 38px;
 }
@@ -223,7 +223,7 @@ main {
   align-items: center;
   gap: 12px;
   padding: 9px 16px;
-  border-bottom: 1px solid rgba(255,255,255,0.08);
+  border-bottom: 1px solid rgba(255,255,255,0.25);
   font-family: var(--font-mono);
   font-size: 19px;
   color: #fff;
@@ -354,7 +354,7 @@ main {
   font-size: 10px;
   letter-spacing: 0.18em;
   color: rgba(255,255,255,0.6);
-  border-bottom: 1px solid rgba(255,255,255,0.08);
+  border-bottom: 1px solid rgba(255,255,255,0.25);
 }
  
 .new-item-body {
