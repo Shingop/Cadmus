@@ -52,7 +52,7 @@ body {
 /* ==========================================
    'TAB' CODE | START
    ========================================== */
-/* White glow from top — floats above everything, doesn't affect layout */
+/* White glow from top */
 body::after {
   content: '';
   position: fixed;
@@ -125,8 +125,13 @@ body::after {
 main {
   position: relative;
   z-index: 1;
-  padding: 60px 40px;
-  padding-top: 38px; /* don't hide behind fixed tabbar */
+  padding: 38px 0 0 0; /* offset for fixed tabbar; pages handle their own padding */
+  height: 100vh;
+}
+ 
+/* non-database pages get normal padding */
+.page:not(#database) {
+  padding: 30px 40px;
 }
  
 .page {
@@ -152,114 +157,129 @@ main {
   letter-spacing: 0.05em;
   line-height: 1.8;
 }
-/* ==========================================
-   'TAB' CODE | END
-   ========================================== */
+ 
 /* ══════════════════════════════
    DATABASE — File Explorer
 ══════════════════════════════ */
  
+#database {
+  padding: 0;
+  height: calc(100vh - 38px);
+  display: flex;
+  flex-direction: column;
+}
+ 
 .db-header {
   display: flex;
-  align-items: flex-end;
+  align-items: center;
   justify-content: space-between;
-  padding: 18px 0 14px;
-  border-bottom: 1px solid rgba(255,255,255,0.07);
-  margin-bottom: 0;
+  padding: 10px 16px;
+  border-bottom: 1px solid rgba(255,255,255,0.15);
+  flex-shrink: 0;
 }
  
 .filepath-label {
   display: block;
   font-family: var(--font-primary);
-  font-size: 9px;
+  font-size: 10px;
+  font-weight: 700;
   letter-spacing: 0.18em;
-  color: rgba(255,255,255,0.3);
-  margin-bottom: 6px;
+  color: #fff;
+  margin-bottom: 5px;
 }
  
 .filepath-row {
   display: flex;
   align-items: center;
-  gap: 6px;
+  gap: 8px;
   font-family: var(--font-mono);
-  font-size: 18px;
-  color: rgba(255,255,255,0.8);
+  font-size: 20px;
+  color: rgba(255,255,255,0.85);
 }
  
 .filepath-root {
-  background: rgba(255,255,255,0.1);
-  border: 1px solid rgba(255,255,255,0.15);
-  padding: 1px 8px;
-  border-radius: 2px;
+  background: rgba(255,255,255,0.12);
+  border: 1px solid rgba(255,255,255,0.3);
+  padding: 1px 10px;
   color: #fff;
+  font-weight: 700;
 }
  
 .filepath-sep {
-  color: rgba(255,255,255,0.4);
+  color: rgba(255,255,255,0.5);
 }
  
 .db-actions {
   display: flex;
-  gap: 10px;
+  gap: 6px;
+  align-items: center;
 }
  
 .db-btn {
   background: none;
-  border: 1px solid rgba(255,255,255,0.2);
-  color: rgba(255,255,255,0.7);
+  border: 1px solid rgba(255,255,255,0.25);
+  color: rgba(255,255,255,0.75);
   font-family: var(--font-primary);
   font-size: 10px;
   letter-spacing: 0.14em;
   font-weight: 600;
-  padding: 6px 14px;
+  padding: 6px 12px;
   cursor: pointer;
   transition: border-color 0.15s, color 0.15s;
+  white-space: nowrap;
+}
+ 
+.db-btn--icon {
+  padding: 6px 10px;
+  font-size: 14px;
 }
  
 .db-btn:hover {
-  border-color: rgba(255,255,255,0.6);
+  border-color: rgba(255,255,255,0.7);
   color: #fff;
 }
  
 .db-explorer {
-  border: 1px solid rgba(255,255,255,0.07);
-  margin-top: 0;
-  min-height: 400px;
-  background: rgba(0,0,0,0.25);
+  flex: 1;
+  overflow-y: auto;
+  border-top: none;
 }
  
 .file-row {
   display: flex;
   align-items: center;
-  gap: 10px;
-  padding: 10px 16px;
-  border-bottom: 1px solid rgba(255,255,255,0.05);
+  gap: 12px;
+  padding: 9px 16px;
+  border-bottom: 1px solid rgba(255,255,255,0.08);
   font-family: var(--font-mono);
-  font-size: 18px;
-  color: rgba(255,255,255,0.65);
+  font-size: 19px;
+  color: #fff;
   cursor: pointer;
-  transition: background 0.12s;
+  transition: background 0.1s;
   user-select: none;
 }
  
 .file-row:hover {
-  background: rgba(255,255,255,0.05);
-  color: #fff;
+  background: rgba(255,255,255,0.07);
+}
+ 
+.file-row--selected {
+  background: rgba(255,255,255,0.1);
 }
  
 .file-row--folder {
   cursor: default;
-  color: rgba(255,100,80,0.8);
+  color: rgba(255, 90, 70, 0.9);
 }
  
 .file-row--folder:hover {
   background: none;
-  color: rgba(255,100,80,0.8);
 }
  
 .file-icon {
   font-size: 14px;
-  opacity: 0.7;
+  opacity: 0.8;
+  flex-shrink: 0;
 }
  
 /* ══════════════════════════════
