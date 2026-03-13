@@ -416,8 +416,8 @@ main {
 }
  
 .doc-header img {
-  width: 72px;
-  height: 72px;
+  width: 80px;
+  height: 80px;
   object-fit: contain;
   flex-shrink: 0;
 }
