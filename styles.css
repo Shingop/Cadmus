@@ -57,7 +57,7 @@ body::after {
   display: flex;
   align-items: stretch;
   background: transparent;
-  border-bottom: 1px solid rgba(255,255,255,0.35);
+  border-bottom: 1px solid rgba(255,255,255,0);
   padding: 0 20px;
   height: 38px;
 }
@@ -150,6 +150,8 @@ main {
   padding: 10px 16px;
   border-bottom: 1px solid rgba(255,255,255,0.4);
   flex-shrink: 0;
+  margin-left: 16px;
+  margin-right: 16px;
 }
  
 .filepath-label {
@@ -182,6 +184,7 @@ main {
  
 .filepath-sep {
   color: rgba(255,255,255,0.8);
+  font-weight: 350;
 }
  
 .db-actions {
@@ -246,9 +249,10 @@ main {
 .file-row--folder:hover { background: none; }
  
 .file-icon {
-  font-size: 14px;
+  font-size: 18px;
   opacity: 0.8;
   flex-shrink: 0;
+  font-variation-settings: "FILL" 0, "wght" 300, "GRAD" 0, "opsz" 20;
 }
  
 /* ══════════════════════════════
