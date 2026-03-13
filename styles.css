@@ -273,8 +273,8 @@ main {
  
 .file-window {
   width: 915px;
-  height: 614px;
-  max-height: 614px;
+  height: 800;
+  max-height: 800;
   background: #fff;
   color: #111;
   display: flex;
