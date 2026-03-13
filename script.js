@@ -16,10 +16,10 @@ let files = [
   { name: 'scp/', type: 'folder', content: null },
   { name: 'scp-173.scp', type: 'file', content: `
     <div class="doc-header">
-      <img alt="SCP Foundation Logo" src="scplogo.png" />
+      <img alt="Cadmus Research Group Logo" src="cadmuslogo.png" />
       <div>
-        <div class="doc-header-tagline">SECURE. CONTAIN. PROTECT</div>
-        <div class="doc-header-title">SCP FOUNDATION</div>
+        <div class="doc-header-tagline">RESEARCH. DEVELOP. ELIMINATE</div>
+        <div class="doc-header-title">CADMUS RESEARCH GROUP</div>
       </div>
     </div>
     <hr class="doc-divider" />
