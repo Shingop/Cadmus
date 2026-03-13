@@ -155,11 +155,12 @@ main {
 .filepath-label {
   display: block;
   font-family: var(--font-primary);
-  font-size: 10px;
+  font-size: 13px;
   font-weight: 700;
   letter-spacing: 0.18em;
   color: #fff;
   margin-bottom: 5px;
+  margin-top: 19px;
 }
  
 .filepath-row {
@@ -176,11 +177,11 @@ main {
   border: 1px solid rgba(255,255,255,0.3);
   padding: 1px 10px;
   color: #fff;
-  font-weight: 700;
+  font-weight: 300;
 }
  
 .filepath-sep {
-  color: rgba(255,255,255,0.5);
+  color: rgba(255,255,255,0.8);
 }
  
 .db-actions {
@@ -225,7 +226,7 @@ main {
   align-items: center;
   gap: 12px;
   padding: 9px 16px;
-  border-bottom: 1px solid rgba(255,255,255,0.25);
+  border-bottom: 1px solid rgba(255,255,255,0);
   font-family: var(--font-mono);
   font-size: 19px;
   color: #fff;
