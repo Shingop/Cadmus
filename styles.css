@@ -403,3 +403,42 @@ main {
   margin-top: 12px;
   align-self: flex-end;
 }
+/* ══════════════════════════════
+   DOCUMENT HEADER
+══════════════════════════════ */
+ 
+.doc-header {
+  display: flex;
+  align-items: center;
+  gap: 20px;
+  padding-bottom: 20px;
+}
+ 
+.doc-header img {
+  width: 72px;
+  height: 72px;
+  object-fit: contain;
+  flex-shrink: 0;
+}
+ 
+.doc-header-tagline {
+  font-family: 'Courier New', monospace;
+  font-size: 11px;
+  letter-spacing: 0.18em;
+  color: #888;
+  margin-bottom: 4px;
+}
+ 
+.doc-header-title {
+  font-family: 'Courier New', monospace;
+  font-size: 22px;
+  font-weight: 700;
+  letter-spacing: 0.04em;
+  color: #111;
+}
+ 
+.doc-divider {
+  border: none;
+  border-top: 1px solid #ccc;
+  margin: 0 0 24px 0;
+}
