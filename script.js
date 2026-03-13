@@ -14,7 +14,20 @@ tabs.forEach(tab => {
 // ── File system ──
 let files = [
   { name: 'scp/', type: 'folder', content: null },
-  { name: 'scp-173.scp', type: 'file', content: '<strong>Item #:</strong> SCP-173<br><br><strong>Object Class:</strong> Euclid<br><br><strong>Special Containment Procedures:</strong> Item SCP-173 is to be kept in a locked container at all times. When personnel must enter SCP-173\'s container, no fewer than 3 may enter at any time and the door is to be relocked behind them.<br><br><strong>Description:</strong> Moved to Site-19 1993. Origin is as of yet unknown. It is constructed from concrete and rebar with traces of Krylon brand spray paint. SCP-173 is animate and extremely hostile.' },
+  { name: 'scp-173.scp', type: 'file', content: `
+    <div class="doc-header">
+      <img alt="SCP Foundation Logo" src="scplogo.png" />
+      <div>
+        <div class="doc-header-tagline">SECURE. CONTAIN. PROTECT</div>
+        <div class="doc-header-title">SCP FOUNDATION</div>
+      </div>
+    </div>
+    <hr class="doc-divider" />
+    <strong>Item #:</strong> SCP-173<br><br>
+    <strong>Object Class:</strong> Euclid<br><br>
+    <strong>Special Containment Procedures:</strong> Item SCP-173 is to be kept in a locked container at all times. When personnel must enter SCP-173's container, no fewer than 3 may enter at any time and the door is to be relocked behind them.<br><br>
+    <strong>Description:</strong> Moved to Site-19 1993. Origin is as of yet unknown. It is constructed from concrete and rebar with traces of Krylon brand spray paint. SCP-173 is animate and extremely hostile.
+  ` },
   { name: 'scp-readme.txt', type: 'file', content: 'This directory contains classified SCP documentation. Unauthorised access is strictly prohibited. All access is logged and monitored.' },
 ];
  
