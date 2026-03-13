@@ -31,8 +31,10 @@ function renderFiles() {
     row.className = 'file-row';
     if (file.type === 'folder') row.classList.add('file-row--folder');
  
-    const icon = file.type === 'folder' ? '&#x1F4C2;' : '&#x1F4C4;';
-    row.innerHTML = `<span class="file-icon">${icon}</span><span class="file-name">${file.name}</span>`;
+    const icon = file.type === 'folder'
+      ? '<span class="material-symbols-outlined file-icon">folder</span>'
+      : '<span class="material-symbols-outlined file-icon">description</span>';
+    row.innerHTML = `${icon}<span class="file-name">${file.name}</span>`;
  
     if (file.type === 'file') {
       row.addEventListener('click', () => openFile(file));
