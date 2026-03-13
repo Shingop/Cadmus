@@ -8,62 +8,43 @@
   --font-medium: 500;
   --font-bold: 700;
 }
-
-body {
-  font-family: var(--font-primary) !important; 
-}
-
-/* ==========================================
-   BACKGROUND CODE | START
-   ========================================== */
+ 
 *, *::before, *::after {
   box-sizing: border-box;
   margin: 0;
   padding: 0;
 }
-
+ 
 html, body {
   width: 100%;
   height: 100%;
   background-color: #000000;
+  font-family: var(--font-primary);
 }
-
+ 
+/* Grid lines — fixed so they never scroll */
 body::before {
   content: '';
   position: fixed;
   inset: 0;
-    background-image:
-    linear-gradient(rgba(252, 252, 252, 0.07) 1px, transparent 1px),
-    linear-gradient(90deg, rgba(252, 252, 252, 0.07) 1px, transparent 1px),
-    linear-gradient(rgba(252, 252, 252, 0.07) 1px, transparent 1px),
-    linear-gradient(90deg, rgba(252, 252, 252, 0.07) 1px, transparent 1px);
-  background-size: 50px 50px, 50px 50px;
-}
-
-body {
-  background-image: radial-gradient(#66666670 1px, transparent 0);
+  background-image:
+    linear-gradient(rgba(252,252,252,0.07) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(252,252,252,0.07) 1px, transparent 1px);
   background-size: 50px 50px;
-  background-position: -24.49px -25px;
+  pointer-events: none;
+  z-index: 0;
 }
-/* ==========================================
-   BACKGROUND CODE | END
-   ========================================== */
-
-/* ==========================================
-   'TAB' CODE | START
-   ========================================== */
-/* White glow from top */
+ 
+/* Dot pattern — fixed so it never scrolls */
 body::after {
   content: '';
   position: fixed;
-  top: 0;
-  left: 50%;
-  transform: translateX(-50%);
-  width: 70%;
-  height: 320px;
-  background: radial-gradient(ellipse at top, rgba(255, 255, 255, 0.07) 0%, transparent 70%);
+  inset: 0;
+  background-image: radial-gradient(#66666670 1px, transparent 0);
+  background-size: 50px 50px;
+  background-position: -24.49px -25px;
   pointer-events: none;
-  z-index: 5;
+  z-index: 0;
 }
  
 /* ── Tabbar ── */
@@ -76,7 +57,7 @@ body::after {
   display: flex;
   align-items: stretch;
   background: transparent;
-  border-bottom: 1px solid rgba(255, 255, 255, 0.08);
+  border-bottom: 1px solid rgba(255,255,255,0.08);
   padding: 0 20px;
   height: 38px;
 }
@@ -91,7 +72,7 @@ body::after {
   position: relative;
   background: none;
   border: none;
-  color: rgba(255, 255, 255, 0.35);
+  color: rgba(255,255,255,0.35);
   font-size: 13px;
   letter-spacing: 0.12em;
   font-weight: 600;
@@ -100,38 +81,26 @@ body::after {
   height: 100%;
   transition: color 0.15s;
   white-space: nowrap;
+  font-family: var(--font-primary);
 }
  
-.tab:hover {
-  color: rgba(255, 255, 255, 0.7);
-}
+.tab:hover { color: rgba(255,255,255,0.7); }
+.tab.active { color: #fff; }
  
-.tab.active {
-  color: #fff;
-}
- 
-/* White indicator on top of active tab */
 .tab.active::after {
   content: '';
   position: absolute;
-  top: 0;
-  left: 0;
-  right: 0;
+  top: 0; left: 0; right: 0;
   height: 2px;
   background: #fff;
 }
  
-/* ── Pages ── */
+/* ── Main / Pages ── */
 main {
   position: relative;
   z-index: 1;
-  padding: 38px 0 0 0; /* offset for fixed tabbar; pages handle their own padding */
+  padding-top: 38px;
   height: 100vh;
-}
- 
-/* non-database pages get normal padding */
-.page:not(#database) {
-  padding: 30px 40px;
 }
  
 .page {
@@ -142,18 +111,23 @@ main {
   display: block;
 }
  
+/* Non-database pages get padding */
+.page:not(#database).active {
+  padding: 30px 40px;
+}
+ 
 .page h1 {
   font-size: 11px;
   letter-spacing: 0.2em;
   font-weight: 600;
-  color: rgba(255, 255, 255, 0.6);
+  color: rgba(255,255,255,0.6);
   text-transform: uppercase;
   margin-bottom: 16px;
 }
  
 .page p {
   font-size: 12px;
-  color: rgba(255, 255, 255, 0.25);
+  color: rgba(255,255,255,0.25);
   letter-spacing: 0.05em;
   line-height: 1.8;
 }
@@ -162,11 +136,11 @@ main {
    DATABASE — File Explorer
 ══════════════════════════════ */
  
-#database {
-  padding: 0;
-  height: calc(100vh - 38px);
+#database.active {
   display: flex;
   flex-direction: column;
+  height: calc(100vh - 38px);
+  padding: 0;
 }
  
 .db-header {
@@ -242,7 +216,6 @@ main {
 .db-explorer {
   flex: 1;
   overflow-y: auto;
-  border-top: none;
 }
  
 .file-row {
@@ -259,22 +232,15 @@ main {
   user-select: none;
 }
  
-.file-row:hover {
-  background: rgba(255,255,255,0.07);
-}
- 
-.file-row--selected {
-  background: rgba(255,255,255,0.1);
-}
+.file-row:hover { background: rgba(255,255,255,0.07); }
+.file-row--selected { background: rgba(255,255,255,0.1); }
  
 .file-row--folder {
   cursor: default;
-  color: rgba(255, 90, 70, 0.9);
+  color: rgba(255,90,70,0.9);
 }
  
-.file-row--folder:hover {
-  background: none;
-}
+.file-row--folder:hover { background: none; }
  
 .file-icon {
   font-size: 14px;
@@ -296,9 +262,7 @@ main {
   justify-content: center;
 }
  
-.file-overlay.active {
-  display: flex;
-}
+.file-overlay.active { display: flex; }
  
 .file-window {
   width: min(720px, 90vw);
@@ -325,10 +289,7 @@ main {
   flex-shrink: 0;
 }
  
-.file-window-controls {
-  display: flex;
-  gap: 6px;
-}
+.file-window-controls { display: flex; gap: 6px; }
  
 .wc-btn {
   background: none;
@@ -344,14 +305,8 @@ main {
   transition: background 0.1s;
 }
  
-.wc-close {
-  color: rgba(255,255,255,0.6);
-}
- 
-.wc-close:hover {
-  background: #c0392b;
-  color: #fff;
-}
+.wc-close { color: rgba(255,255,255,0.6); }
+.wc-close:hover { background: #c0392b; color: #fff; }
  
 .file-window-body {
   overflow-y: auto;
@@ -380,9 +335,7 @@ main {
   justify-content: center;
 }
  
-.new-item-overlay.active {
-  display: flex;
-}
+.new-item-overlay.active { display: flex; }
  
 .new-item-modal {
   width: min(420px, 90vw);
@@ -432,9 +385,7 @@ main {
   transition: border-color 0.15s;
 }
  
-.new-item-body textarea {
-  min-height: 120px;
-}
+.new-item-body textarea { min-height: 120px; }
  
 .new-item-body input:focus,
 .new-item-body textarea:focus {
