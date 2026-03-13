@@ -272,8 +272,9 @@ main {
 .file-overlay.active { display: flex; }
  
 .file-window {
-  width: min(720px, 90vw);
-  max-height: 80vh;
+  width: 915px;
+  height: 614px;
+  max-height: 614px;
   background: #fff;
   color: #111;
   display: flex;
