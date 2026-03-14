@@ -446,6 +446,9 @@ main {
   align-items: center;
   gap: 20px;
   padding-bottom: 20px;
+   webkit-user-select: none; /* Safari */
+  ms-user-select: none; /* IE 10 and IE 11 */
+  user-select: none; /* Standard syntax */
 }
  
 .doc-header img {
@@ -453,6 +456,9 @@ main {
   height: 150px;
   object-fit: contain;
   flex-shrink: 0;
+   webkit-user-select: none; /* Safari */
+  ms-user-select: none; /* IE 10 and IE 11 */
+  user-select: none; /* Standard syntax */
 }
  
 .doc-header-tagline {
@@ -461,6 +467,9 @@ main {
   letter-spacing: 0.18em;
   color: #888;
   margin-bottom: 4px;
+   webkit-user-select: none; /* Safari */
+  ms-user-select: none; /* IE 10 and IE 11 */
+  user-select: none; /* Standard syntax */
 }
  
 .doc-header-title {
@@ -469,10 +478,16 @@ main {
   font-weight: 700;
   letter-spacing: 0.04em;
   color: #111;
+   webkit-user-select: none; /* Safari */
+  ms-user-select: none; /* IE 10 and IE 11 */
+  user-select: none; /* Standard syntax */
 }
  
 .doc-divider {
   border: none;
   border-top: 1px solid #ccc;
   margin: 0 0 24px 0;
+   webkit-user-select: none; /* Safari */
+  ms-user-select: none; /* IE 10 and IE 11 */
+  user-select: none; /* Standard syntax */
 }
