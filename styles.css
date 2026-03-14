@@ -157,12 +157,15 @@ main {
 .filepath-label {
   display: block;
   font-family: var(--font-primary);
-  font-size: 13px;
+  font-size: 12.5px;
   font-weight: 700;
   letter-spacing: 0.18em;
   color: #fff;
   margin-bottom: 5px;
   margin-top: 19px;
+  webkit-user-select: none; /* Safari */
+  ms-user-select: none; /* IE 10 and IE 11 */
+  user-select: none; /* Standard syntax */
 }
  
 .filepath-row {
@@ -175,16 +178,46 @@ main {
 }
  
 .filepath-root {
+  font-family: var(--font-primary);
   background: rgba(255,255,255,0.12);
   border: 1px solid rgba(255,255,255,0.3);
   padding: 1px 10px;
   color: #fff;
-  font-weight: 300;
+  font-weight: 700;
+  font-size: 15px;
+  webkit-user-select: none; /* Safari */
+  ms-user-select: none; /* IE 10 and IE 11 */
+  user-select: none; /* Standard syntax */
 }
  
+.filepath-home-icon {
+  font-family: var(--font-primary);
+  color: #fff;
+  font-weight: 700;
+  font-size: 18px;
+  webkit-user-select: none; /* Safari */
+  ms-user-select: none; /* IE 10 and IE 11 */
+  user-select: none; /* Standard syntax */
+}
+
 .filepath-sep {
+  font-family: var(--font-primary);
   color: rgba(255,255,255,0.8);
-  font-weight: 350;
+  font-weight: 700;
+  font-size: 15px;
+  webkit-user-select: none; /* Safari */
+  ms-user-select: none; /* IE 10 and IE 11 */
+  user-select: none; /* Standard syntax */
+}
+
+.filepath-sep-active {
+  font-family: var(--font-primary);
+  color: rgba(255,255,255);
+  font-weight: 700;
+  font-size: 15px;
+  webkit-user-select: none; /* Safari */
+  ms-user-select: none; /* IE 10 and IE 11 */
+  user-select: none; /* Standard syntax */
 }
  
 .db-actions {
@@ -201,7 +234,7 @@ main {
   font-size: 10px;
   letter-spacing: 0.14em;
   font-weight: 600;
-  padding: 6px 12px;
+  padding: 8px 12px;
   cursor: pointer;
   transition: border-color 0.15s, color 0.15s;
   white-space: nowrap;
