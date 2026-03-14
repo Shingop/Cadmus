@@ -16,7 +16,7 @@ let files = [
   { name: 'scp/', type: 'folder', content: null },
   { name: 'scp-173.scp', type: 'file', content: `
     <div class="doc-header">
-      <img alt="Cadmus Research Group Logo" src="cadmuslogo.png" />
+      <img alt="Cadmus Research Group Logo" src="https://github.com/Shingop/Cadmus/blob/main/cadmuslogo.png?raw=true" />
       <div>
         <div class="doc-header-tagline">RESEARCH. DEVELOP. ELIMINATE</div>
         <div class="doc-header-title">CADMUS RESEARCH GROUP</div>
