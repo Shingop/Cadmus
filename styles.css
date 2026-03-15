@@ -143,6 +143,16 @@ main {
   ms-user-select: none; /* IE 10 and IE 11 */
   user-select: none; /* Standard syntax */
 }
+
+.page h3{
+  font-size: 17px;
+  font-family: var(--font-primary);
+  font-weight: 600;
+  color: rgba(255,255,255,0.9); 
+  webkit-user-select: none; /* Safari */
+  ms-user-select: none; /* IE 10 and IE 11 */
+  user-select: none; /* Standard syntax */
+}
 /* ══════════════════════════════
    DATABASE — File Explorer
 ══════════════════════════════ */
