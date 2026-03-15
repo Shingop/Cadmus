@@ -328,6 +328,9 @@ main {
   font-size: 15px;
   letter-spacing: 0.06em;
   flex-shrink: 0;
+  webkit-user-select: none; /* Safari */
+  ms-user-select: none; /* IE 10 and IE 11 */
+  user-select: none; /* Standard syntax */
 }
  
 .file-window-controls { display: flex; gap: 6px; }
