@@ -101,3 +101,4 @@ newItemConfirm.addEventListener('click', () => {
 });
  
 renderFiles();
+document.getElementById("date").innerHTML = Date();
