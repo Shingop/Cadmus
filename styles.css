@@ -20,6 +20,7 @@ html, body {
   height: 100%;
   background-color: #000000;
   font-family: var(--font-primary);
+  color: rgba(255,255,255);
 }
  
 /* Grid lines — fixed so they never scroll */
@@ -131,7 +132,17 @@ main {
   letter-spacing: 0.05em;
   line-height: 1.8;
 }
- 
+
+.page h2{
+  font-size: 17px;
+  font-family: var(--font-primary);
+  letter-spacing: 0.2em;
+  font-weight: 500;
+  color: rgba(255,255,255,0.9); 
+  webkit-user-select: none; /* Safari */
+  ms-user-select: none; /* IE 10 and IE 11 */
+  user-select: none; /* Standard syntax */
+}
 /* ══════════════════════════════
    DATABASE — File Explorer
 ══════════════════════════════ */
@@ -238,6 +249,20 @@ main {
   cursor: pointer;
   transition: border-color 0.15s, color 0.15s;
   white-space: nowrap;
+}
+ 
+.scip-terminal {
+  font-family: var(--font-primary);
+  background: rgba(255,255,255);
+  border: 1px solid rgba(255,255,255,0.3);
+  padding: 0px 10px 1px;
+  color: #000000;
+  font-weight: 700;
+  font-size: 14px;
+  margin-right: 10px;
+  webkit-user-select: none; /* Safari */
+  ms-user-select: none; /* IE 10 and IE 11 */
+  user-select: none; /* Standard syntax */
 }
  
 .db-btn--icon {
