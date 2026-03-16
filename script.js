@@ -2,6 +2,10 @@
 const tabs = document.querySelectorAll('.tab');
 const pages = document.querySelectorAll('.page');
  
+document.addEventListener("DOMContentLoaded", () => {
+  renderFiles();
+});
+
 tabs.forEach(tab => {
   tab.addEventListener('click', () => {
     tabs.forEach(t => t.classList.remove('active'));
@@ -11,22 +15,34 @@ tabs.forEach(tab => {
   });
 });
  
+// Preload images used inside files
+const preloadImages = [
+  "https://github.com/Shingop/Cadmus/blob/main/scplogo.png?raw=true",
+  "https://raw.githubusercontent.com/Shingop/imagehosting/refs/heads/main/cadmuslogo2.png",
+  "https://raw.githubusercontent.com/Shingop/imagehosting/refs/heads/main/cadmuslogo3.png"
+];
+
+preloadImages.forEach(src => {
+  const img = new Image();
+  img.src = src;
+});
+
 // ── File system ──
 // "{ name: 'scp/', type: 'folder', content: 'null' }," = file
 let files = [
   { name: 'readme.txt', type: 'file', content: `
    <div class="doc-header">
-      <img alt="SCP Foundation Logo" src="https://github.com/Shingop/Cadmus/blob/main/scplogo.png?raw=true" />
+      <img alt="" src="https://github.com/Shingop/Cadmus/blob/main/scplogo.png?raw=true" />
       <div>
-        <div class="doc-header-tagline">SECURE. CONTAIN. PROTECT</div>
+        <div class="doc-header-tagline">SECURE. CONTAIN. PROTECT.</div>
         <div class="doc-header-title">SCP FOUNDATION</div>
       </div>
     </div>
     <hr class="doc-divider" />
     <center>
-  <h2>Welcome to the 'CADMUS RESEARCH DATABASE'</h2>
+  <h2>Welcome to the 'CADMUS INSTITUTE DATABASE'</h2>
     </center>
-   <p>The 'Cadmus Research' Database holds all SCP Foundation files based around the Cadmus Research Group, A Neutral/Friendly Group of Interest based around the research of anomalous entities for both financial & academic interest.</p>
+   <p>The 'Cadmus Institute' Database holds all SCP Foundation files based around the Cadmus Institute, A Neutral/Friendly Group of Interest based around the existence of anomalous entities for both defense, financial & academic interest.</p>
    
   <div style="width: 1442px; height: 18px; line-height: 18px; overflow: hidden;"></div>
   
@@ -41,23 +57,23 @@ let files = [
 </ul> 
 </p>
   ` },
-  { name: 'Hierarchy.txt', type: 'file', content: `
+  { name: 'Cadmus-institute.txt', type: 'file', content: `
     <div class="doc-header">
-      <img alt="Cadmus Research Group Logo" src="https://github.com/Shingop/Cadmus/blob/main/cadmuslogo.png?raw=true" />
+      <img alt="" src="https://raw.githubusercontent.com/Shingop/imagehosting/refs/heads/main/cadmuslogo2.png" />
       <div>
-        <div class="doc-header-tagline">RESEARCH. DEVELOP. ELIMINATE</div>
-        <div class="doc-header-title">CADMUS RESEARCH GROUP</div>
+        <div class="doc-header-tagline">RESEARCH. DEVELOP. DEFEND.</div>
+        <div class="doc-header-title">THE CADMUS INSTITUTE</div>
       </div>
     </div>
     <hr class="doc-divider" />
-
+<p>GoI – 325623, also known as the <strong><span style="letter-spacing: -0.0106132px; color: #ad1600;">CADMUS INSTITUTE</span></strong>, is a private subsidiary of the more public & known <strong><span style="letter-spacing: -0.0106132px; color: #ad1600;">CADMUS INDUSTRIES</span></strong> (See Cadmus-Industies.txt).</p>
   ` },
-  { name: 'rank-structure.txt', type: 'file', content: `
+  { name: 'Cadmus-Industies.txt', type: 'file', content: `
     <div class="doc-header">
-      <img alt="Cadmus Research Group Logo" src="https://github.com/Shingop/Cadmus/blob/main/cadmuslogo.png?raw=true" />
+      <img alt="" src="https://raw.githubusercontent.com/Shingop/imagehosting/refs/heads/main/cadmuslogo3.png" />
       <div>
-        <div class="doc-header-tagline">RESEARCH. DEVELOP. ELIMINATE</div>
-        <div class="doc-header-title">CADMUS RESEARCH GROUP</div>
+        <div class="doc-header-tagline">OBSERVE. ACQUIRE. EVOLVE.</div>
+        <div class="doc-header-title">CADMUS INDUSTRIES</div>
       </div>
     </div>
     <hr class="doc-divider" />
@@ -134,8 +150,9 @@ newItemConfirm.addEventListener('click', () => {
   newItemOverlay.classList.remove('active');
 });
  
-renderFiles();
+
 document.getElementById("date").innerHTML = Date();
+
 
 //-----------------
 
@@ -311,3 +328,24 @@ document.getElementById("date").innerHTML = Date();
   }
  
 })();
+
+document.addEventListener("DOMContentLoaded", () => {
+
+  const gridBtn = document.getElementById("grid-view-btn");
+  const fileList = document.getElementById("file-list");
+
+  if (gridBtn && fileList) {
+    gridBtn.addEventListener("click", () => {
+
+      fileList.classList.toggle("grid-view");
+
+      if (fileList.classList.contains("grid-view")) {
+        gridBtn.innerHTML = "☰ LIST VIEW";
+      } else {
+        gridBtn.innerHTML = "☷ GRID VIEW";
+      }
+
+    });
+  }
+
+});
