@@ -7,7 +7,7 @@
   <link rel="stylesheet" href="styles.css" />
 </head>
 <body>
- 
+ <div class="bg-logo"></div>
   <nav class="tabbar">
     <div class="tabs">
       <button class="tab active" data-tab="terminal">SCiPNET TERMINAL</button>
@@ -52,6 +52,16 @@
       
       <div style="width: 1442px; height: 18px; line-height: 18px; overflow: hidden;"></div>
       
+        <div style="width: 1442px; height: 18px; line-height: 18px; overflow: hidden;">
+      <span style="letter-spacing: -0.0106132px; ">Access Point:</span>
+      </div>
+        
+        <div style="width: 1442px; height: 18px; line-height: 18px; overflow: hidden;">
+      <span style="letter-spacing: -0.0106132px; ">SITE XX – SECTOR 2 – ADMINISTRATION DEPARTMENT</span>
+      </div>
+        
+        <div style="width: 1442px; height: 18px; line-height: 18px; overflow: hidden;"></div>
+        
       <div style="width: 1442px; height: 18px; line-height: 18px; overflow: hidden;">
       <span style="letter-spacing: -0.0106132px; ">Welcome to the '</span>
       <span class="xterm-fg-208" style="letter-spacing: -0.0106132px; color: #f38100;">SCiPNET Terminal</span>
@@ -59,7 +69,7 @@
       </div>
 
        <div style="width: 1442px; height: 18px; line-height: 18px; overflow: hidden;">
-      <span style="letter-spacing: -0.0106132px; ">Please look below at the guide which instructs you on how to operate & navigate the terminal.</span>
+      <span style="letter-spacing: -0.0106132px; ">Please look at the guide below, which instructs you on how to operate & navigate the terminal.</span>
       </div>
       
       <div style="width: 1442px; height: 18px; line-height: 18px; overflow: hidden;"></div>
@@ -76,6 +86,10 @@
       
       <div style="width: 1442px; height: 18px; line-height: 18px; overflow: hidden;"></div>
       
+        <ul><li>Please start with 'readme.txt', however after that you may view in whichever order you'd like.</li></ul>
+        
+        <div style="width: 1442px; height: 18px; line-height: 18px; overflow: hidden;"></div>
+        
       <div style="width: 1442px; height: 18px; line-height: 18px; overflow: hidden;">
       <span style="letter-spacing: -0.0106132px; ">______________________________________________________________________________</span>
       </div>
@@ -142,12 +156,97 @@
         <label>FILE NAME</label>
         <input type="text" id="new-file-name" placeholder="e.g. document.txt" disabled/>
         <label>CONTENT</label>
-        <textarea id="new-file-content" placeholder="Enter file contents..."></textarea>
+        <textarea id="new-file-content" placeholder="Enter file contents..." disabled></textarea>
         <label>YOU DO NOT HAVE THE NECCESSARY AUTHORIZATION TO UPLOAD A NEW FILE, IF THIS IS AN ERROR PLEASE CONTACT YOUR LOCAL ADMINISTRATION DEPARTMENT.</label>
       </div>
     </div>
   </div>
+ <!-- SIDEBAR HTML -->
+<div class="site72-sidebar" id="site72-sidebar">
  
+  <!-- MAP AREA -->
+  <div class="s72-map">
+    <canvas id="s72-map-canvas"></canvas>
+    <div class="s72-map-overlay">
+      <div class="s72-map-scanline"></div>
+    </div>
+    <div class="s72-map-labels">
+      <div class="s72-meta-row"><span class="s72-meta-key">COUNTRY</span></div>
+      <div class="s72-meta-val">[ REDACTED ]</div>
+      <div class="s72-meta-row"><span class="s72-meta-key">REGION</span></div>
+      <div class="s72-meta-val">[ REDACTED ]</div>
+      <div class="s72-meta-row"><span class="s72-meta-key">IP ADDRESS</span></div>
+      <div class="s72-meta-val">[ REDACTED ]</div>
+    </div>
+  </div>
+ 
+  <!-- SITE TITLE -->
+  <div class="s72-title-block">
+    <div class="s72-site-label">SITE-XX</div>
+    <div class="s72-site-sub">HUME METER</div>
+  </div>
+ 
+  <!-- WAVEFORM -->
+  <div class="s72-waveform-wrap">
+    <canvas id="s72-waveform" width="260" height="40"></canvas>
+  </div>
+ 
+  <!-- THREAT DETECTION -->
+  <div class="s72-section-label">THREAT DETECTION</div>
+  <div class="s72-threat-block">
+    <div class="s72-radar-wrap">
+      <canvas id="s72-radar" width="90" height="90"></canvas>
+    </div>
+    <div class="s72-status-lines" id="s72-status-lines">
+      <div>DEPARTMENT_CONDITION: NORMAL</div>
+      <div>CAMERA_FEED: FUNCTIONAL</div>
+      <div>BREACH_PROTOCOL: READY</div>
+      <div>POWER_SUPPLY: NORMAL</div>
+      <div>BACKUP_POWER_FUEL: NORMAL</div>
+      <div>FIRE_SUPPRESSION_SYSTEMS: FUNCTIONAL</div>
+      <div>ANOMALY_DETECTION: SAFE</div>
+      <div>CPU_USAGE = 8%</div>
+      <div>FACILITY_GROUNDS_FUNCTIONING = YES</div>
+      <div>THERMAL_SIGNATURES = 24</div>
+    </div>
+  </div>
+ 
+  <!-- HKG LINE -->
+  <div class="s72-hkg-bar">
+    <span class="s72-hkg-text">H K G</span>
+    <canvas id="s72-hkg-wave" width="160" height="22"></canvas>
+  </div>
+ 
+  <!-- STATUS BAR -->
+  <div class="s72-status-bar">
+    <div class="s72-status-msgs" id="s72-status-msgs">
+      <div>CONNECTING...</div>
+      <div>OPTIMIZING INTERFACE...</div>
+      <div>SCAN COMPLETE</div>
+      <div>DEV MODE OFF</div>
+    </div>
+    <div class="s72-display-info">
+      <div class="s72-di-label">DISPLAYING FILE</div>
+      <div class="s72-di-val">VISIT COUNT / <span id="s72-visit-count">75986</span></div>
+    </div>
+  </div>
+ 
+  <!-- EVENT LOG -->
+  <div class="s72-section-label" style="margin-top:8px;">EVENT LOG</div>
+  <div class="s72-event-log" id="s72-event-log"></div>
+ 
+  <!-- SITE SAFETY INDEX -->
+  <div class="s72-safety-block">
+    <div class="s72-safety-bar-wrap">
+      <div class="s72-safety-fill" id="s72-safety-fill" style="height:78%"></div>
+    </div>
+    <div class="s72-safety-label-wrap">
+      <div class="s72-safety-title">SITE SAFETY INDEX</div>
+      <div class="s72-safety-pct" id="s72-safety-pct">78%</div>
+    </div>
+  </div>
+ 
+</div>
   <script src="script.js"></script>
 </body>
 </html>
