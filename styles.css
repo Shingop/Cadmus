@@ -37,6 +37,9 @@ html, body {
   background-color: #000000;
   font-family: var(--font-primary);
   color: rgba(255,255,255);
+ webkit-user-select: none; /* Safari */
+  ms-user-select: none; /* IE 10 and IE 11 */
+  user-select: none; /* Standard syntax */
 }
  
 /* Grid lines — fixed so they never scroll */
